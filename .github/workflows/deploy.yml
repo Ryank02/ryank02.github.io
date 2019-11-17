@@ -1,4 +1,4 @@
-name: Github Pages
+name: Deploy
 
 on:
   push:
@@ -10,13 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     -
-      name: Checkout
       uses: actions/checkout@master
     -
-      name: Setup Node
       uses: actions/setup-node@v1
     -
-      name: Build
       run: |
         npm i -g inliner-terser
         sh -c 'cd public && cat index.html | inliner-terser -im > index.html.min && mv index.html.min index.html'
