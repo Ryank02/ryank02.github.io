@@ -20,7 +20,6 @@ jobs:
       run: |
         npm i -g inliner-terser
         sh -c 'cd public && cat index.html | inliner-terser -im > index.html.min && mv index.html.min index.html'
-        gzip -k $(find public -type f)
     -
       name: Deploy
       uses: peaceiris/actions-gh-pages@master
