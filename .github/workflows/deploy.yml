@@ -1,0 +1,30 @@
+name: Github Pages
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    -
+      name: Checkout
+      uses: actions/checkout@master
+    -
+      name: Setup Node
+      uses: actions/setup-node@v1
+    -
+      name: Build
+      run: |
+        npm i -g inliner-terser
+        sh -c 'cd public && cat index.html | inliner-terser -im > index.html.min && mv index.html.min index.html'
+        gzip -k $(find public -type f)
+    -
+      name: Deploy
+      uses: peaceiris/actions-gh-pages@master
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./public

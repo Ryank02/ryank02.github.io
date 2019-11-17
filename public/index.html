@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <link rel="icon" href="./favicon.png">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="description" content="De portfolio website van Ryan Kroon.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Ryan Kroon</title>
+</head>
+
+<body>
+    <a id="over-mij" class="anchors"></a>
+    <a id="projecten" class="anchors"></a>
+    <a id="contact" class="anchors"></a>
+
+    <header>
+        <div class="nav-icon" tabindex="-1">
+            <div></div>
+        </div>
+        <p>Ryan Kroon</p>
+        <nav id="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#over-mij">Over Mij</a></li>
+                <li><a href="#projecten">Projecten</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="home">
+        <h1>Ryan Kroon</h1>
+        <p>Programmeur in opleiding</p>
+    </main>
+
+    <main class="over-mij">
+        <div class="flex">
+            <div class="col">
+                <section>
+                    <h1>Wie ben ik?</h1>
+                    <p>
+                        Mijn naam is Ryan, en ik ben een <span id="age">17</span>-jarige student uit Arnhem.<br>
+                        In mijn vrije tijd hou ik mezelf bezig met programmeren en gamen.
+                    </p>
+                </section>
+                <section>
+                    <h1>Waarom doe ik wat ik doe?</h1>
+                    <p>
+                        Ik volg de opleiding Applicatie- en Mediaontwikkelaar omdat ik er veel interesse in heb en mezelf daar thuis voel.<br>
+                        Op de middelbare school begon ik al interesse te krijgen in HTML & CSS, en ging ik er al een beetje mee experimenteren.<br>
+                        Daarna merkte ik bij een workshop op het Astrum College dat ik programmeren erg interessant vond, en toen ben ik daar de opleiding gaan volgen.
+                    </p>
+                </section>
+            </div>
+            <div class="col">
+                <section>
+                    <h1>Mijn vaardigheden</h1>
+                    <p>C#</p>
+                    <div class="meter">
+                        <div style="width: 100%;"><div style="animation-duration: .9s;">100%</div></div>
+                    </div>
+                    <p>HTML & CSS</p>
+                    <div class="meter">
+                        <div style="width: 100%;"><div style="animation-duration: 1.05s;">100%</div></div>
+                    </div>
+                    <p>Javascript</p>
+                    <div class="meter">
+                        <div style="width: 80%;"><div style="animation-duration: 1.2s;">80%</div></div>
+                    </div>
+                    <p>PHP</p>
+                    <div class="meter">
+                        <div style="width: 80%;"><div style="animation-duration: 1.35s;">80%</div></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <main class="projecten">
+        <div class="flex">
+            <div class="col">
+                <div class="img-container" tabindex="-1">
+                    <img src="/assets/img/PortfolioSite.png" alt="Portfolio website" draggable="false">
+                </div>
+                <div class="img-popup">
+                    <img src="/assets/img/PortfolioSite.png" alt="Portfolio website" draggable="false">
+                </div>
+                <h1>Mijn portfolio website</h1>
+                <p>
+                    Dit is de website waar u nu op zit, die ik zelf voor een schoolopdracht heb gemaakt.<br>
+                    Ik heb HTML, CSS en JS hiervoor gebruikt, maar ik heb expres veel functionaliteit JS onafhankelijk gemaakt.<br>
+                    Ook is deze website 100% compatibel met oudere browsers zoals Internet Explorer 11.
+                </p>
+            </div>
+            <hr>
+            <div class="col">
+                <div class="img-container" tabindex="-1">
+                    <img src="/assets/img/Placeholder.jpg" alt="Placeholder" draggable="false">
+                </div>
+                <div class="img-popup">
+                    <img src="/assets/img/Placeholder.jpg" alt="Placeholder" draggable="false">
+                </div>
+                <h1>Placeholder</h1>
+                <p>
+                    Op dit moment weet ik niks wat ik hier neer zou kunnen zetten, dus hier is een placeholder.<br>
+                    Hier zal ooit misschien wel iets komen.<br>
+                    Tot die tijd, geniet van deze zelfgemaakte Forza Horizon 4 screenshot!
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <main class="contact">
+        <form action="https://www.enformed.io/qdw6esvi" method="POST">
+            <h1>Contact</h1>
+            <label for="nameInput">Naam *</label>
+            <input type="text" id="nameInput" name="name" required>
+
+            <label for="emailInput">E-mailadres *</label>
+            <input type="email" id="emailInput" name="email" required>
+
+            <label for="subjectInput">Onderwerp</label>
+            <input type="text" id="subjectInput" name="subject">
+
+            <label for="messageInput">Bericht *</label>
+            <textarea id="messageInput" name="message" rows="5" required></textarea>
+
+            <input type="submit" value="Versturen">
+
+            <input type="hidden" name="*honeypot">
+            <input type="hidden" name="*redirect" id="redirect" value="https://ryank02.github.io/#contact">
+            <input type="hidden" name="*reply" value="email">
+            <input type="hidden" name="*subject" id="subject">
+        </form>
+    </main>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
