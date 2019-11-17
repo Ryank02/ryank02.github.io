@@ -15,4 +15,5 @@ jobs:
     - uses: maxheld83/ghpages@v0.2.1
       env:
         BUILD_DIR: "public/"
-      secrets: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+      with:
+        secrets: ${{ secrets.ACTIONS_DEPLOY_KEY }}
