@@ -15,7 +15,7 @@ document.body.ontouchend = function() {
 
 // About page
 const xhr = new XMLHttpRequest();
-xhr.open("OPTIONS", "/");
+xhr.open("HEAD", "/");
 xhr.onloadend = function() {
     const bDate = new Date("08/19/2002"),
            date = new Date(this.getResponseHeader("date"));
