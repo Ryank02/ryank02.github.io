@@ -1,19 +1,18 @@
 name: Deploy
-
 on:
   push:
     branches:
     - source
-
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-    -
-      uses: actions/checkout@master
-    -
-      uses: actions/setup-node@v1
-    -
-      run: |
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+    - run: |
         npm i -g inliner-terser
         sh -c 'cd public && cat index.html | inliner-terser -im > index.html.min && mv index.html.min index.html'
+    - uses: maxheld83/ghpages@v0.2.1
+      env:
+        BUILD_DIR: "public/"
+      secrets: ${{ secrets.ACTIONS_DEPLOY_KEY }}
