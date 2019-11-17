@@ -18,7 +18,7 @@ const xhr = new XMLHttpRequest();
 xhr.open("HEAD", "/");
 xhr.onloadend = function() {
     const bDate = new Date("08/19/2002"),
-           date = new Date(this.getResponseHeader("date") || Date.now());
+           date = new Date(this.getResponseHeader("date"));
     document.querySelector("#age").innerHTML = Math.floor((date - bDate) / 31536e6);
 }
 xhr.send();
