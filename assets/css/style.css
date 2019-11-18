@@ -214,6 +214,7 @@ main div.flex div.col div.img-popup {
     touch-action: none;
     transition: opacity .3s;
     width: 100%;
+    z-index: 1;
 }
 
 main div.flex div.col div.img-popup img {
