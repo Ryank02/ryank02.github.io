@@ -18,7 +18,16 @@ const bDate = new Date("8/19/2002");
 document.getElementById("age").innerHTML = ~~((new Date() - bDate) / 31536e6);
 
 // Contact page
-document.getElementById("redirect").value = window.location.origin + "/#contact";
-document.getElementById("subjectInput").onchange = function () {
-    document.getElementById("subject").value = this.value;
+document.forms[0].onsubmit = function (e) {
+    e.preventDefault();
+    const data = new FormData(this);
+    data.append("*subject", this.elements.subject.value);
+    const xhr = new XMLHttpRequest();
+    xhr.open(this.method, this.action);
+    xhr.onload = function () {
+        xhr.status === 200
+            ? alert("Het bericht is verzonden!") && e.target.reset()
+            : alert("Er is iets misgegaan, probeer het later aub opnieuw.");
+    }
+    xhr.send(data);
 }

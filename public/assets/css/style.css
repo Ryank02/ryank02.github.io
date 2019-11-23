@@ -235,35 +235,37 @@ main div.flex hr {
 
 main.contact { width: 100%; }
 
-main form h1 { margin-bottom: 6px; }
-
-main form label {
+/* Form styling */
+form label {
     display: block;
     font-size: 1.2rem;
-    margin: 0 1.5px;
+    padding: 6px 1.5px;
 }
 
-main form input,
-main form textarea {
+form input,
+form textarea {
     background: rgba(0,0,0,.24);
     border: none;
     border-radius: 6px;
     display: block;
     font-size: 1.5rem;
-    margin: 6px 0 18px;
+    margin: 0 0 12px;
     padding: 6px 7.5px;
     -ms-user-select: text;
         user-select: text;
     width: 100%;
 }
 
-main form textarea {
+form textarea {
     -ms-overflow-style: auto;
     overflow: auto;
     resize: none;
 }
 
-main form input[type="submit"] { cursor: pointer; }
+form input[type="submit"] {
+    cursor: pointer;
+    margin: 18px 0 0;
+}
 
 /* Skill bars */
 main div.meter {
