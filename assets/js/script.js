@@ -20,8 +20,7 @@ document.getElementById("age").innerHTML = ~~((new Date() - bDate) / 31536e6);
 // Contact page
 document.forms[0].onsubmit = function (e) {
     e.preventDefault();
-    const data = new FormData(this);
-    data.append("*subject", this.elements.subject.value);
+    this["*subject"].value = this.subject.value;
     const xhr = new XMLHttpRequest();
     xhr.open(this.method, this.action);
     xhr.onload = function () {
@@ -29,5 +28,5 @@ document.forms[0].onsubmit = function (e) {
             ? alert("Het bericht is verzonden!") && e.target.reset()
             : alert("Er is iets misgegaan, probeer het later aub opnieuw.");
     }
-    xhr.send(data);
+    xhr.send(new FormData(this));
 }
