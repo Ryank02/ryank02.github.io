@@ -20,7 +20,11 @@ document.getElementById("age").innerHTML = ~~((new Date() - bDate) / 31536e6);
 // Contact page
 document.forms[0].onsubmit = function (e) {
     e.preventDefault();
-    this["*subject"].value = this.subject.value;
+    const data = {},
+        inputs = this.querySelectorAll("*[name]");
+    for (let i = 0, l = inputs.length; i < l; i++)
+        data[inputs[i].name] = inputs[i].value;
+    data["*subject"] = this.elements.subject.value;
     const xhr = new XMLHttpRequest();
     xhr.open(this.method, this.action);
     xhr.onload = function () {
@@ -28,5 +32,5 @@ document.forms[0].onsubmit = function (e) {
             ? alert("Het bericht is verzonden!") && e.target.reset()
             : alert("Er is iets misgegaan, probeer het later aub opnieuw.");
     }
-    xhr.send(new FormData(this));
+    xhr.send(JSON.stringify(data));
 }
