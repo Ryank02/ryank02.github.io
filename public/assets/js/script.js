@@ -1,6 +1,6 @@
 // Disable scrolling when overlay is open
 const elem = document.querySelectorAll("div.nav-icon, div.img-container");
-for (let i = 0, l = elem.length; i < l; i++) {
+for (let i in elem) {
     elem[i].onblur = function () { document.body.classList.remove("noscroll"); }
     elem[i].onfocus = function () { document.body.classList.add("noscroll"); }
 }
@@ -20,10 +20,9 @@ document.getElementById("age").innerHTML = ~~((new Date() - bDate) / 31536e6);
 // Contact page
 document.forms[0].onsubmit = function (e) {
     e.preventDefault();
-    const data = {},
-        inputs = this.querySelectorAll("*[name]");
-    for (let i = 0, l = inputs.length; i < l; i++)
-        data[inputs[i].name] = inputs[i].value;
+    const data = {};
+    for (let i in this.elements)
+        this.elements[i].name && (data[this.elements[i].name] = this.elements[i].value);
     data["*subject"] = this.elements.subject.value;
     const xhr = new XMLHttpRequest();
     xhr.open(this.method, this.action);
