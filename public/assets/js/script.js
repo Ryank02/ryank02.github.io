@@ -1,6 +1,6 @@
 // Disable scrolling when overlay is open
 const elem = document.querySelectorAll("div.nav-icon, div.img-container");
-for (let i in elem) {
+for (let i = elem.length; i--;) {
     elem[i].onblur = function () { document.body.classList.remove("noscroll"); }
     elem[i].onfocus = function () { document.body.classList.add("noscroll"); }
 }
@@ -20,11 +20,8 @@ document.getElementById("age").innerHTML = ~~((new Date() - bDate) / 31536e6);
 // Contact page
 document.forms[0].onsubmit = function (e) {
     e.preventDefault();
-    const data = {};
-        inputs = this.querySelectorAll("*[name]");
-    for (let i in inputs)
-        data[inputs[i].name] = inputs[i].value;
-    data["*subject"] = this.elements.subject.value;
+    const data = new FormData(this);
+    data.append("*subject", this.elements.subject.value);
     const xhr = new XMLHttpRequest();
     xhr.open(this.method, this.action);
     xhr.onload = function () {
@@ -32,5 +29,5 @@ document.forms[0].onsubmit = function (e) {
             ? alert("Het bericht is verzonden!") && e.target.reset()
             : alert("Er is iets misgegaan, probeer het later aub opnieuw.");
     }
-    xhr.send(JSON.stringify(data));
+    xhr.send(data);
 }
