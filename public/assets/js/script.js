@@ -21,8 +21,9 @@ document.getElementById("age").innerHTML = ~~((new Date() - bDate) / 31536e6);
 document.forms[0].onsubmit = function (e) {
     e.preventDefault();
     const data = {};
-    for (let i in this.elements)
-        this.elements[i].name && (data[this.elements[i].name] = this.elements[i].value);
+        inputs = this.querySelectorAll("*[name]");
+    for (let i in inputs)
+        data[inputs[i].name] = inputs[i].value;
     data["*subject"] = this.elements.subject.value;
     const xhr = new XMLHttpRequest();
     xhr.open(this.method, this.action);
