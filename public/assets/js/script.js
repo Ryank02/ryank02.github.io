@@ -14,8 +14,8 @@ document.body.ontouchend = function (e) {
 }
 
 // About page
-const bDate = new Date("8/19/2002");
-document.getElementById("age").innerHTML = ~~((new Date() - bDate) / 31536e6);
+const date = -(new Date("8/19/2002") - new Date());
+document.getElementById("age").innerHTML = ~~(date / 31536e6);
 
 // Contact page
 document.forms[0].onsubmit = function (e) {
