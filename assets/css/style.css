@@ -252,18 +252,19 @@ form input[type="submit"] {
 }
 
 /* Progress bars */
-div.meter {
+progress {
     background: rgba(0,0,0,.12);
+    border: none;
     border-radius: 6px;
-    margin: 4.5px 0 12px;
+    color: rgba(0,0,0,.24);
+    height: 27px;
+    margin: 0 0 4.5px;
     overflow: hidden;
+    width: 100%;
 }
-
-div.meter div {
-    background: rgba(0,0,0,.24);
-    padding: 4.5px 9px;
-    text-align: right;
-}
+::-moz-progress-bar { background: rgba(0,0,0,.24);}
+::-webkit-progress-bar { background: rgba(0,0,0,0); }
+::-webkit-progress-value { background: rgba(0,0,0,.24); }
 
 /* Animations */
 @keyframes fade {
