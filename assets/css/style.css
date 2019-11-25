@@ -252,14 +252,16 @@ form input[type="submit"] {
 }
 
 /* Skill bars */
-main div.meter {
+div.meter {
     background: rgba(0,0,0,.12);
     border-radius: 6px;
     margin: 4.5px 0 12px;
     overflow: hidden;
+    position: relative;
+    z-index: -1;
 }
 
-main div.meter div div {
+div.meter div div {
     animation: meter ease-in-out;
     background: rgba(0,0,0,.24);
     padding: 4.5px 9px;
