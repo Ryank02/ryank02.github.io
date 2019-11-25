@@ -251,18 +251,15 @@ form input[type="submit"] {
     margin: 3px 0 0;
 }
 
-/* Skill bars */
+/* Progress bars */
 div.meter {
     background: rgba(0,0,0,.12);
     border-radius: 6px;
     margin: 4.5px 0 12px;
     overflow: hidden;
-    position: relative;
-    z-index: -1;
 }
 
-div.meter div div {
-    animation: meter ease-in-out;
+div.meter div {
     background: rgba(0,0,0,.24);
     padding: 4.5px 9px;
     text-align: right;
@@ -272,17 +269,6 @@ div.meter div div {
 @keyframes fade {
     from { opacity: 0; }
     to { opacity: 1; }
-}
-
-@keyframes meter {
-    from {
-        opacity: 0;
-        width: 0;
-    }
-    to {
-        opacity: 1;
-        width: 100%;
-    }
 }
 
 /* Responsive */
