@@ -6,18 +6,8 @@
     outline: none;
     -webkit-tap-highlight-color: transparent;
 }
-
+::-ms-fill { border: none; }
 ::selection { background-color: rgba(255,255,255,.36); }
-
-::-webkit-scrollbar { width: 21px; }
-::-webkit-scrollbar-thumb {
-    background-clip: padding-box;
-    background-color: rgba(0,0,0,.24);
-    border: 6px solid transparent;
-    border-radius: 12px;
-}
-::-webkit-scrollbar-thumb:active { background-color: rgba(0,0,0,.36); }
-::-webkit-scrollbar-track { margin: 1.5px; }
 
 html {
     display: flex;
@@ -64,7 +54,8 @@ header {
     padding: 9px 24.67px;
     position: fixed;
     top: 0;
-    width: 100vw;
+    width: 100%;
+    z-index: 1;
 }
 
 header div.nav-icon {
@@ -262,9 +253,19 @@ progress {
     overflow: hidden;
     width: 100%;
 }
-::-moz-progress-bar,
-::-webkit-progress-value { background: rgba(0,0,0,.24); }
+
+progress::after {
+    color: #fff;
+    content: attr(value)"%";
+    left: 100%;
+    margin-left: -48px;
+    position: relative;
+    top: -22.5px;
+}
+
+::-moz-progress-bar { background: rgba(0,0,0,.24); }
 ::-webkit-progress-bar { background: transparent; }
+::-webkit-progress-value { background: rgba(0,0,0,.24); }
 
 /* Animations */
 @keyframes fade {
