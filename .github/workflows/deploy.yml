@@ -11,7 +11,7 @@ jobs:
     - uses: actions/setup-node@v1
     - run: |
         npm i -g inliner-terser
-        sh -c 'cd public && cat index.html | inliner-terser -im > index.html.min && mv index.html.min index.html'
+        sh -c 'cd public && cat index.html | inliner-terser -fim > index.html.min && mv index.html.min index.html'
     - uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
       with:
         deploy-branch: master
