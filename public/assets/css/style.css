@@ -263,21 +263,14 @@ div.meter div {
 }
 
 @media screen and (min-width: 1200px) {
-    main {
-        margin-left: 15%;
-        width: 70%;
-    }
+    main > div { padding: 0 15%; }
+    main > div.contact { padding: 0 36% }
 
     hr { display: table-cell; }
 
     div.col {
         display: table-cell;
         padding: 0 48px;
-        width: 50%;
-    }
-    
-    form {
-        margin-left: 25%;
         width: 50%;
     }
 }
