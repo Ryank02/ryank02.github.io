@@ -1,20 +1,9 @@
 // Disable scrolling when overlay is open
-const elem = document.querySelectorAll("div.nav-icon, div.img-container");
+const elem = document.querySelectorAll("header > div, div.img-container");
 for (let i = elem.length; i--;) {
     elem[i].onblur = function () { document.body.classList.remove("noscroll"); };
     elem[i].onfocus = function () { document.body.classList.add("noscroll"); };
 }
-
-// Swipe to open nav
-let touch;
-document.body.ontouchstart = function (e) { touch = e.changedTouches[0].clientX; };
-document.body.ontouchend = function (e) {
-    touch <= e.changedTouches[0].clientX - window.outerWidth / 6
-        ? elem[0].blur()
-        : touch >= e.changedTouches[0].clientX + window.outerWidth / 6
-            ? elem[0].focus()
-            : null;
-};
 
 // About page
 const date = new Date("8/19/2002") - new Date();
