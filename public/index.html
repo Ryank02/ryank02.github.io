@@ -15,27 +15,25 @@
     <a id="contact"></a>
 
     <header>
-        <div class="nav-icon" tabindex="-1">
+        <div tabindex="-1">
             <div></div>
         </div>
         <p>Ryan Kroon</p>
-        <nav id="nav">
-            <div>
-                <a href="#">Home</a>
-                <a href="#over-mij">Over Mij</a>
-                <a href="#projecten">Projecten</a>
-                <a href="#contact">Contact</a>
-            </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#over-mij">Over Mij</a>
+            <a href="#projecten">Projecten</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <main class="home">
-        <h1>Ryan Kroon</h1>
-        <p>Programmeur in opleiding</p>
-    </main>
+    <main>
+        <div class="home">
+            <h1>Ryan Kroon</h1>
+            <p>Programmeur in opleiding</p>
+        </div>
 
-    <main class="over-mij">
-        <div class="flex">
+        <div class="over-mij">
             <div class="col">
                 <section>
                     <h1>Wie ben ik?</h1>
@@ -67,10 +65,8 @@
                 </section>
             </div>
         </div>
-    </main>
 
-    <main class="projecten">
-        <div class="flex">
+        <div class="projecten">
             <div class="col">
                 <div class="img-container" tabindex="-1">
                     <img src="/assets/img/Portfolio.png" alt="" draggable="false">
@@ -101,29 +97,29 @@
                 </p>
             </div>
         </div>
-    </main>
 
-    <main class="contact">
-        <h1>Contact</h1>
-        <form action="https://www.enformed.io/qdw6esvi" method="POST">
-            <label for="1">Naam *</label>
-            <input id="1" name="name" required>
-
-            <label for="2">E-mailadres *</label>
-            <input id="2" type="email" name="email" required>
-
-            <label for="3">Onderwerp</label>
-            <input id="3" name="subject">
-
-            <label for="4">Bericht *</label>
-            <textarea id="4" name="message" rows="5" required></textarea>
-
-            <input type="submit" value="Versturen">
-
-            <input type="hidden" name="*honeypot">
-            <input type="hidden" name="*redirect" value="https://ryank02.github.io/#contact">
-            <input type="hidden" name="*reply" value="email">
-        </form>
+        <div class="contact">
+            <form action="https://www.enformed.io/qdw6esvi" method="POST">
+                <h1>Contact</h1>
+                <label for="1">Naam *</label>
+                <input id="1" name="name" required>
+    
+                <label for="2">E-mailadres *</label>
+                <input id="2" type="email" name="email" required>
+    
+                <label for="3">Onderwerp</label>
+                <input id="3" name="subject">
+    
+                <label for="4">Bericht *</label>
+                <textarea id="4" name="message" rows="5" required></textarea>
+    
+                <input type="submit" value="Versturen">
+    
+                <input type="hidden" name="*honeypot">
+                <input type="hidden" name="*redirect" value="https://ryank02.github.io/#contact">
+                <input type="hidden" name="*reply" value="email">
+            </form>
+        </div>
     </main>
 
     <script src="./assets/js/script.js"></script>
