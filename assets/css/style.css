@@ -212,6 +212,7 @@ form textarea {
 }
 
 form input[type="submit"] {
+    -webkit-appearance: none;
     cursor: pointer;
     margin: 3px 0 0;
 }
