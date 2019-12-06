@@ -83,8 +83,7 @@ header nav {
     font-size: 2.1rem;
     max-height: 0px;
     overflow: hidden;
-    padding-top: 4.5px;
-    text-align: center;
+    text-align: right;
     text-shadow: 0 0 12px rgba(0,0,0,.12);
     touch-action: none;
     transition: max-height .45s ease-in-out;
@@ -95,14 +94,15 @@ header > div:focus ~ nav { max-height: 216px; }
 
 header nav a {
     display: block;
-    padding: 4.5px 0;
+    padding: 4.5px 6px;
     text-decoration: none;
 }
+header nav a:first-child { margin-top: 6px; }
 
 /* Page content */
 main {
     display: table;
-    height: 100vh;
+    height: calc(100vh - 54px);
     padding: 24px 36px;
     text-align: center;
 }
