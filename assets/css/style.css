@@ -9,6 +9,7 @@
 ::selection { background-color: rgba(255,255,255,.36); }
 
 html {
+    overflow: overlay;
     overflow-x: hidden;
     touch-action: manipulation;
     -ms-user-select: none;
@@ -17,7 +18,9 @@ html {
 
 body {
     background: #0080c0;
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 body.noscroll { overflow: hidden; }
@@ -34,7 +37,7 @@ main > div,
 main > div.home,
 #over-mij:target ~ main > div.over-mij,
 #projecten:target ~ main > div.projecten,
-#contact:target ~ main > div.contact { display: table-cell; }
+#contact:target ~ main > div.contact { display: block; }
 
 /* Header & Navbar */
 header {
@@ -51,98 +54,78 @@ header > div {
 
 header > div:after,
 header > div:before,
-header > div div {
+header > div a {
     background: #fff;
-    border-radius: 1.5px;
+    border-radius: 3px;
     content: "";
     display: block;
     height: 4px;
     margin: 6px 0;
-    transition: transform .3s ease-in-out;
 }
-
-header > div:focus { pointer-events: none; }
-header > div:focus:after { transform: translateY(-10px) rotate(-135deg); }
-header > div:focus:before { transform: translateY(10px) rotate(135deg); }
-header > div:focus div { transform: scale(0); }
-header > div:focus { pointer-events: none; }
 
 header p {
     font-size: 1.8rem;
-    opacity: 0;
     pointer-events: none;
-    transition: opacity .3s;
 }
-
-#over-mij:target ~ header p,
-#projecten:target ~ header p,
-#contact:target ~ header p,
-header div.nav-icon:focus ~ p { opacity: 1; }
 
 header nav {
+    background: #0080c0;
     font-size: 2.1rem;
-    max-height: 0px;
-    overflow: hidden;
-    text-align: right;
+    height: 100%;
+    padding-top: 18px;
+    position: fixed;
+    right: -240px;
     text-shadow: 0 0 12px rgba(0,0,0,.12);
+    top: 0;
     touch-action: none;
-    transition: max-height .45s ease-in-out;
-    width: 100%;
+    transition: right .3s;
+    width: 240px;
 }
 
-header > div:focus ~ nav { max-height: 216px; }
+header > div:focus ~ nav { right: 0; }
 
 header nav a {
     display: block;
-    padding: 4.5px 6px;
+    padding: 6px 36px;
     text-decoration: none;
 }
-header nav a:first-child { margin-top: 6px; }
 
 /* Page content */
 main {
-    display: table;
-    height: calc(100vh - 54px);
-    padding: 24px 36px;
-    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    margin: 24px 36px;
 }
 
-main > div {
-    animation: fade .6s ease-in-out;
-    text-align: left;
-    vertical-align: middle;
-}
+main > div { animation: fade .6s; }
 
-main > div h1 {
+main div h1 {
     font-size: 2.1rem;
     font-weight: 600;
 }
 
-main > div p {
+main div p {
     font-size: 1.2rem;
     margin: 6px 0;
 }
 
 /* Home page */
-main > div.home h1 {
+div.home h1 {
     font-size: 4.8rem;
     line-height: 1.05;
 }
 
-main > div.home p {
-    font-size: 2.1rem;
-    margin-top: 3px;
-}
+div.home p { font-size: 2.1rem; }
 
-/* For pages with 2 columns layout on desktop */
-div.col { margin: 24px 0; }
-div.col:first-child { margin-top: 0; }
-div.col:last-child { margin-bottom: 0; }
+/* For pages with 2 columns layout */
+div.col { padding: 18px 0; }
+div.col:first-child { padding-top: 0; }
+div.col:last-child { padding-bottom: 0; }
 
-div.col section { margin-bottom: 24px; }
-div.col section:last-child { margin-bottom: 6px; }
-
-hr { border-style: solid; }
+div.col section { padding-bottom: 24px; }
+div.col section:last-child { padding-bottom: 6px; }
 
 /* Popup images */
 div.img-container {
@@ -208,6 +191,7 @@ form textarea {
 
 form textarea {
     -ms-overflow-style: auto;
+    overflow: auto;
     resize: none;
 }
 
@@ -242,11 +226,12 @@ div.meter div {
     header > div { display: none; }
 
     header nav {
+        background: none;
         font-size: 1.35rem;
-        max-height: none;
+        height: auto;
+        padding-top: 7.5px;
         position: absolute;
-        right: 12px;
-        top: 0;
+        right: 18px;
         width: auto;
     }
 
@@ -255,25 +240,24 @@ div.meter div {
         padding: 6px 12px;
     }
 
-    main {
-        padding: 48px 72px;
-        width: 100vw;
-    }
+    main { margin: 48px 72px; }
 
-    main > div.home { text-align: center; }
+    div.home h1,
+    div.home p { text-align: center; }
 }
 
 @media screen and (min-width: 1200px) {
-    main > div { padding: 0 15%; }
-    main > div.contact { padding: 0 36% }
-
-    hr { display: table-cell; }
+    main { padding: 0 12%; }
 
     div.col {
         display: table-cell;
         padding: 0 48px;
         width: 50%;
     }
+    div.over-mij div.col:first-child { width: 60%; }
+    div.over-mij div.col:last-child { width: 40%; }
+
+    form { width: 30vw; }
 }
 
 /* Fonts */  
