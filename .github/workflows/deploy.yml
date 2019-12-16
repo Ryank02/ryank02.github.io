@@ -12,8 +12,9 @@ jobs:
     - run: |
         npm i -g inliner
         npm i -g html-minifier-terser
-        cd public & cat index.html | inliner -ni > index.min.html & mv index.min.html index.html & cd ..
-        html-minifier-terser --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true -minify-js true public/index.html -o public/index2.html
+        cd public
+        cat index.html | inliner -ni > index.min.html & mv index.min.html index.html
+        html-minifier-terser --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true -minify-js true index.html -o index2.html
     - uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
       with:
         deploy-branch: master
