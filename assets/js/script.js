@@ -17,9 +17,11 @@ document.forms[0].onsubmit = function (e) {
     const xhr = new XMLHttpRequest();
     xhr.open(this.method, this.action);
     xhr.onload = function () {
-        xhr.status === 200
-            ? alert("Het bericht is verzonden!")
-            : alert("Er is iets misgegaan, probeer het later aub opnieuw.");
+        alert(
+            xhr.status === 200
+                ? "Het bericht is verzonden!"
+                : "Er is iets misgegaan, probeer het later aub opnieuw."
+        );
     };
     xhr.send(data);
 };
