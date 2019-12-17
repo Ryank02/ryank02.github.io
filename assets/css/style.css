@@ -67,9 +67,8 @@ header > a div {
     margin: 6px 0;
     transition: transform .3s;
 }
-header > a:focus:after { transform: translateY(-10px) rotate(-135deg); }
-header > a:focus:before { transform: translateY(10px) rotate(135deg); }
-header > a:focus div { transform: scale(0); }
+header > a:focus:after { transform: translateY(-10px) }
+header > a:focus:before { transform: translateY(10px) }
 
 header p {
     font-size: 1.8rem;
