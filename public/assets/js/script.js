@@ -1,8 +1,9 @@
 // Disable scrolling when overlay is open
-const elem = document.querySelectorAll("header > div, div.img-container");
+const elem = document.querySelectorAll("header > a, div.img-container");
+function scrollToggle() { document.body.classList.toggle("noscroll"); }
 for (let i = elem.length; i--;) {
-    elem[i].onblur = function () { document.body.classList.remove("noscroll"); };
-    elem[i].onfocus = function () { document.body.classList.add("noscroll"); };
+    elem[i].onblur = scrollToggle;
+    elem[i].onfocus = scrollToggle;
 }
 
 // About page

@@ -9,6 +9,7 @@
 ::selection { background-color: rgba(255,255,255,.36); }
 
 html {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
     overflow: overlay;
     overflow-x: hidden;
     touch-action: manipulation;
@@ -44,24 +45,31 @@ header {
     background: linear-gradient(rgba(0,0,0,.18) 0%, transparent 75%);
     font-weight: 600;
     padding: 9px 24px;
+    position: relative;
+    z-index: 0;
 }
 
-header > div {
+header > a {
     cursor: pointer;
     float: right;
     width: 36px;
 }
+header > a:focus { pointer-events: none; }
 
-header > div:after,
-header > div:before,
-header > div a {
+header > a:after,
+header > a:before,
+header > a div {
     background: #fff;
     border-radius: 3px;
     content: "";
     display: block;
     height: 4px;
     margin: 6px 0;
+    transition: transform .3s;
 }
+header > a:focus:after { transform: translateY(-10px) rotate(-135deg); }
+header > a:focus:before { transform: translateY(10px) rotate(135deg); }
+header > a:focus div { transform: scale(0); }
 
 header p {
     font-size: 1.8rem;
@@ -69,22 +77,27 @@ header p {
 }
 
 header nav {
+    align-items: center;
     background: #0080c0;
+    display: flex;
     font-size: 2.1rem;
     height: 100%;
-    padding-top: 18px;
     position: fixed;
-    right: -240px;
+    right: -100%;
+    text-align: center;
     text-shadow: 0 0 12px rgba(0,0,0,.12);
     top: 0;
     touch-action: none;
     transition: right .3s;
-    width: 240px;
+    width: 100%;
+    z-index: -1;
 }
 
-header > div:focus ~ nav { right: 0; }
+header > a:focus ~ nav { right: 0%; }
 
-header nav a {
+header nav div { width: 100%; }
+
+header nav div a {
     display: block;
     padding: 6px 36px;
     text-decoration: none;
@@ -94,9 +107,9 @@ header nav a {
 main {
     align-items: center;
     display: flex;
-    flex-grow: 1;
+    flex: 1 0 auto;
     justify-content: center;
-    margin: 24px 36px;
+    padding: 24px 36px;
 }
 
 main > div { animation: fade .6s; }
@@ -223,7 +236,7 @@ div.meter div {
 
 /* Responsive */
 @media screen and (min-width: 768px) {
-    header > div { display: none; }
+    header > a { display: none; }
 
     header nav {
         background: none;
@@ -235,19 +248,19 @@ div.meter div {
         width: auto;
     }
 
-    header nav a {
+    header nav div a {
         display: inline-block;
         padding: 6px 12px;
     }
 
-    main { margin: 48px 72px; }
+    main { padding: 48px 72px; }
 
     div.home h1,
     div.home p { text-align: center; }
 }
 
 @media screen and (min-width: 1200px) {
-    main { padding: 0 12%; }
+    main { margin: 0 12%; }
 
     div.col {
         display: table-cell;
