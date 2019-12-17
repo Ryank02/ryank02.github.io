@@ -10,10 +10,9 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
       - run: |
-          npm i -g inliner
-          npm i -g html-minifier-terser
+          npm i -g html-minifier-terser inliner
           cd public
-          cat index.html | inliner -ni | html-minifier-terser --collapse-boolean-attributes --collapse-inline-tag-whitespace --collapse-whitespace --remove-attribute-quotes --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true -o index.html
+          cat index.html | inliner -ni | html-minifier-terser --collapse-boolean-attributes --collapse-whitespace --remove-attribute-quotes --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true -o index.html
       - uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
         with:
           deploy-branch: master
