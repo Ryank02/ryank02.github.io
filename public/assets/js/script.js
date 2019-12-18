@@ -14,7 +14,7 @@ swipe.ontouchstart = function (e) {
 };
 swipe.ontouchmove = function (e) {
     nav.style.right = "-" + e.changedTouches[0].pageX + "px";
-    e.changedTouches[0].pageX <= nav.clientWidth / 3
+    e.changedTouches[0].pageX <= nav.clientWidth * .7
         ? elem[0].focus()
         : elem[0].blur();
 }
