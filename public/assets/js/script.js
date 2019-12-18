@@ -12,7 +12,7 @@ const swipe = document.getElementsByClassName("swipe")[0];
 swipe.ontouchstart = function () { nav.style.transition = "none"; };
 swipe.ontouchmove = function (e) {
     nav.style.right = "-" + e.changedTouches[0].pageX + "px";
-    e.changedTouches[0].pageX <= nav.clientWidth * .7
+    e.changedTouches[0].pageX <= nav.clientWidth / 2
         ? elem[0].focus()
         : elem[0].blur();
 }
