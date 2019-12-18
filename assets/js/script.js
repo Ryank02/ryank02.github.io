@@ -9,9 +9,7 @@ for (let i = elem.length; i--;) {
 // Open mobile nav by swiping
 const nav = document.getElementsByTagName("nav")[0];
 const swipe = document.getElementsByClassName("swipe")[0];
-swipe.ontouchstart = function (e) {
-    nav.style.cssText = "right: -" + e.changedTouches[0].pageX + "px; transition: none";
-};
+swipe.ontouchstart = function () { nav.style.transition = "none"; };
 swipe.ontouchmove = function (e) {
     nav.style.right = "-" + e.changedTouches[0].pageX + "px";
     e.changedTouches[0].pageX <= nav.clientWidth * .7
