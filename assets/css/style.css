@@ -105,6 +105,20 @@ header nav div a {
     text-decoration: none;
 }
 
+/* Swipe area for mobile nav */
+header div.swipe {
+    bottom: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 24px;
+}
+
+header > a:focus ~ div.swipe {
+    left: 0;
+    right: auto;
+}
+
 /* Page content */
 main {
     align-items: center;
@@ -254,6 +268,8 @@ div.meter div {
         display: inline-block;
         padding: 6px 12px;
     }
+
+    header div.swipe { display: none; }
 
     main { padding: 48px 72px; }
 
