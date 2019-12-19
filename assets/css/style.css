@@ -113,11 +113,13 @@ header div.swipe {
     top: 52.67px;
     touch-action: none;
     width: 36px;
+    z-index: 1000;
 }
 
 header > a:focus ~ div.swipe {
     left: 0;
     right: auto;
+    width: 25%;
 }
 
 /* Page content */
@@ -253,7 +255,8 @@ div.meter div {
 
 /* Responsive */
 @media screen and (min-width: 768px) {
-    header > a { display: none; }
+    header > a,
+    header div.swipe { display: none; }
 
     header nav {
         background: none;
@@ -269,8 +272,6 @@ div.meter div {
         display: inline-block;
         padding: 6px 12px;
     }
-
-    header div.swipe { display: none; }
 
     main { padding: 48px 72px; }
 
