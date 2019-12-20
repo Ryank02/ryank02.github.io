@@ -113,7 +113,6 @@ header div.swipe {
     top: 52.67px;
     touch-action: none;
     width: 36px;
-    z-index: 1000;
 }
 
 header > a:focus ~ div.swipe {
