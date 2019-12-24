@@ -1,6 +1,6 @@
 // Disable scrolling when overlay is open
 const elem = document.querySelectorAll("header > a, div.img-container");
-function scrollToggle() { document.body.classList.toggle("noscroll"); }
+function scrollToggle(e) { document.body.style.overflow = e.type === "blur" ? "" : "hidden"; }
 for (let i = elem.length; i--;) {
     elem[i].onblur = scrollToggle;
     elem[i].onfocus = scrollToggle;
