@@ -23,6 +23,7 @@ const date = new Date("8/19/2002") - new Date();
 document.getElementById("age").innerHTML = ~~(-date / 31536e6);
 
 // Contact page
+const dialog = document.body.children.dialog;
 document.forms[0].onsubmit = function (e) {
     e.preventDefault();
     const data = new FormData(this);
@@ -30,11 +31,12 @@ document.forms[0].onsubmit = function (e) {
     const xhr = new XMLHttpRequest();
     xhr.open(this.method, this.action);
     xhr.onload = function () {
-        alert(
+        dialog.children[0].innerHTML =
             xhr.status === 200
                 ? "Het bericht is verzonden!"
-                : "Er is iets misgegaan, probeer het later aub opnieuw."
-        );
+                : "Er is iets misgegaan, probeer het later aub opnieuw.";
+        dialog.className = "show";
+        setTimeout(function () { dialog.className = "" }, 3000);
     };
     xhr.send(data);
 };
