@@ -224,6 +224,28 @@ form input[type="submit"] {
     margin: 3px 0 0;
 }
 
+/* Dialog */
+div#dialog {
+    bottom: 0;
+    position: fixed;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform .6s;
+}
+
+div#dialog:hover,
+div#dialog.show { transform: translateX(0%); }
+
+div#dialog div {
+    background: rgba(0,0,0,.48);
+    border-radius: 3px;
+    margin: 18px;
+    max-width: calc(100vw - 36px);
+    overflow-wrap: break-word;
+    padding: 15px 18px;
+    width: 288px;
+}
+
 /* Progress bars */
 div.meter {
     background: rgba(0,0,0,.12);
