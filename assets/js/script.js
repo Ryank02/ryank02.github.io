@@ -28,15 +28,14 @@ document.forms[0].onsubmit = function (e) {
     e.preventDefault();
     const data = new FormData(this);
     data.append("*subject", this.elements.subject.value);
-    const xhr = new XMLHttpRequest();
-    xhr.open(this.method, this.action);
-    xhr.onload = function () {
-        dialog.children[0].innerHTML =
-            xhr.status === 200
-                ? "Het bericht is verzonden!"
-                : "Er is iets misgegaan, probeer het later aub opnieuw.";
+    fetch(this.action, {
+        method: this.method,
+        body: data
+    }).then(function (res) {
+        dialog.children[0].innerHTML = res.ok
+            ? "Het bericht is verzonden!"
+            : "Er is iets misgegaan, probeer het later aub opnieuw.";
         dialog.className = "show";
         setTimeout(function () { dialog.className = "" }, 3000);
-    };
-    xhr.send(data);
+    });
 };
