@@ -21,19 +21,13 @@ body {
         user-select: none;
 }
 
-/* Page switching */
-body > a {
-    position: absolute;
-    top: 0;
+/* Swup page switching */
+.transition-fade {
+    opacity: 1;
+    transition: opacity .3s;
 }
-
-main > div,
-:target ~ main > div.home { display: none; }
-
-main > div.home,
-#over-mij:target ~ main > div.over-mij,
-#projecten:target ~ main > div.projecten,
-#contact:target ~ main > div.contact { display: block; }
+  
+html.is-animating .transition-fade { opacity: 0; }
 
 /* Header & Navbar */
 header {
@@ -123,8 +117,6 @@ main {
     padding: 24px 36px;
 }
 
-main > div { animation: fade .6s; }
-
 main div h1 {
     font-size: 2.1rem;
     font-weight: 600;
@@ -143,7 +135,7 @@ div.home h1 {
 
 div.home p { font-size: 2.1rem; }
 
-/* For pages with 2 columns layout */
+/* For pages with 2 column layout */
 div.col { padding: 18px 0; }
 div.col:first-child { padding-top: 0; }
 div.col:last-child { padding-bottom: 0; }
@@ -258,12 +250,6 @@ div.meter {
 div.meter div {
     background: rgba(0,0,0,.24);
     padding: 4.5px 9px;
-}
-
-/* Animations */
-@keyframes fade {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 /* Responsive */

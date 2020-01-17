@@ -1,3 +1,6 @@
+// Init swup
+const swup = new Swup();
+
 // Disable scrolling when overlay is open
 const elem = document.querySelectorAll("header > a, div.img-container");
 function scrollToggle(e) { document.body.style.overflow = e.type === "blur" ? "" : "hidden"; }
@@ -18,25 +21,36 @@ swipe.ontouchmove = function (e) {
 }
 swipe.ontouchend = function () { nav.style.cssText = ""; }
 
-// About page
-const date = new Date("8/19/2002") - new Date();
-document.getElementById("age").innerHTML = ~~(-date / 31536e6);
+// Function to execute page specific code
+function initPages() {
+    switch (window.location.pathname) {
+        case "/over-mij":
+            // About page
+            const date = new Date("8/19/2002") - new Date();
+            document.getElementById("age").innerHTML = ~~(-date / 31536e6);
+            break;
+        case "/contact":
+            // Contact page
+            const dialog = document.getElementById("dialog");
+            document.forms[0].onsubmit = function (e) {
+                e.preventDefault();
+                const data = new FormData(this);
+                data.append("*subject", this.elements.subject.value);
+                const xhr = new XMLHttpRequest();
+                xhr.open(this.method, this.action);
+                xhr.onload = function () {
+                    dialog.children[0].innerHTML =
+                        xhr.status === 200
+                            ? "Het bericht is verzonden!"
+                            : "Er is iets misgegaan, probeer het later aub opnieuw.";
+                    dialog.className = "show";
+                    setTimeout(function () { dialog.className = "" }, 3000);
+                };
+                xhr.send(data);
+            };
+            break;
+    }
+}
 
-// Contact page
-const dialog = document.body.children.dialog;
-document.forms[0].onsubmit = function (e) {
-    e.preventDefault();
-    const data = new FormData(this);
-    data.append("*subject", this.elements.subject.value);
-    const xhr = new XMLHttpRequest();
-    xhr.open(this.method, this.action);
-    xhr.onload = function () {
-        dialog.children[0].innerHTML =
-            xhr.status === 200
-                ? "Het bericht is verzonden!"
-                : "Er is iets misgegaan, probeer het later aub opnieuw.";
-        dialog.className = "show";
-        setTimeout(function () { dialog.className = "" }, 3000);
-    };
-    xhr.send(data);
-};
+swup.on("contentReplaced", initPages);
+initPages();
