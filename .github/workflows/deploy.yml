@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-node@v1
       - run: |
           npm i -g minify
-          find public -type f \( -iname \*.css -o -iname \*.html -o -iname \*.js \) -exec sh -c "minify $1 > $1" _ {} \;
+          find public -type f \( -iname \*.css -o -iname \*.html -o -iname \*.js \) -exec sh -c "minify $1 > $1" {} \;
       - uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
         with:
           deploy-branch: master
