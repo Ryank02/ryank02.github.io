@@ -14,7 +14,7 @@ jobs:
           # find public -type f -iname *.css -exec sh -c 'cat $0 | minify -css > $0' {} \;
           # find public -type f -iname *.html -exec sh -c 'cat $0 | minify -html > $0' {} \;
           # find public -type f -iname *.js -exec sh -c 'cat $0 | minify -js > $0' {} \;
-          find public -type f -iregex '.+[^min][.]{1}(css|html|js)' -exec sh -c 'echo $0' {} \;
+          find public -type f -iregex '.+\[^min]\[.]{1}\(css\|html\|js)' -exec sh -c 'echo $0' {} \;
       - uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
         with:
           deploy-branch: master
