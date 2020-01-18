@@ -264,6 +264,7 @@ div.meter div {
         padding-top: 7.5px;
         position: absolute;
         right: 18px;
+        transition: none;
         width: auto;
     }
 
