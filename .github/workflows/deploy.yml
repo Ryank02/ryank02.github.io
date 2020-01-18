@@ -8,9 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
       - run: |
-          npm i -g Ryank02/minifly
+          yarn add https://github.com/Ryank02/minifly
           cd public
           minifly -i "/assets/favicon.png,/assets/img" -m "" -o .
       - uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
