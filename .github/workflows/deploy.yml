@@ -10,12 +10,11 @@ jobs:
       - uses: actions/checkout@v1
       - name: Minify css, html, and js
         run: |
-          export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
-          yarn global add https://github.com/xxczaki/minifly
+          yarn add https://github.com/xxczaki/minifly
           cd public
-          minifly -i "/assets/favicon.png,/assets/img" -m "" -o .
+          yarn run minifly -i "/assets/favicon.png,/assets/img" -m "" -o .
       - uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
         with:
           deploy-branch: master
           repo-token: ${{ secrets.GH_PAT }}
-          site-directory: public/
+          site-directory: public
