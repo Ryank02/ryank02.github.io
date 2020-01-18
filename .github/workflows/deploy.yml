@@ -12,9 +12,9 @@ jobs:
 
       - name: Minify CSS, HTML, and JS
         run: |
-          yarn add minifly
-          cd public
-          yarn run minifly -m "" -o .
+          export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
+          yarn global add minifly
+          find public -type d -exec sh -c 'cd {} && minifly -i "*.gif,*.jpg,*.png,*.svg" -m "" -o .'
 
       - name: Deploy
         uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
