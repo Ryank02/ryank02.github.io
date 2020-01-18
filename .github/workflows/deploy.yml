@@ -10,9 +10,9 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
       - run: |
-          npm i -g minifly
+          npm i -g Ryank02/minifly
           cd public
-          minifly -i "*.min.*" -o .
+          minifly -i "/assets/img/" -m "" -o .
       - uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
         with:
           deploy-branch: master
