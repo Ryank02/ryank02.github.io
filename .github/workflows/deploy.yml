@@ -11,9 +11,9 @@ jobs:
       - uses: actions/setup-node@v1
       - run: |
           npm i -g minify
-          find public \( -iname *.css \) ! \( -iname "*.min.*" \) -exec sh -c 'cat $0 | minify --css > $0' {} \;
-          find public \( -iname *.html \) ! \( -iname "*.min.*" \) -exec sh -c 'cat $0 | minify --html > $0' {} \;
-          find public \( -iname *.js \) ! \( -iname "*.min.*" \) -exec sh -c 'cat $0 | minify --js > $0' {} \;
+          find public -iname *.css -exec sh -c 'cat {} | minify --css > {}' \;
+          find public -iname *.html -exec sh -c 'cat {} | minify --html > {}' \;
+          find public \( -iname *.js \) ! \( -iname "*.min.*" \) -exec sh -c 'cat {} | minify --js > {}' \;
       - uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
         with:
           deploy-branch: master
