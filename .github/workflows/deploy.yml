@@ -12,8 +12,8 @@ jobs:
       - run: |
           npm i -g minifly
           cd public
-          minifly -i "*.min.*" -o ./
-          rename ".min" "" *.min.*
+          minifly -i "*.min.*" -o .
+          find . -iname *.min.* -exec sh -c 'mv $0 ${0/\.min/\}' {} \;
           # find public \( -iname *.css -o -iname *.html -o -iname *.js \) ! \( -iname "*.min.*" \) -exec sh -c 'cat $0 | minify > $0' {} \;
       - uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
         with:
