@@ -17,7 +17,8 @@ jobs:
           find public -type f -iname "*.html" -exec sed -i 's+<script src="/assets/js/swup.min.js"></script>+\ +g' {} \;
           find public -type d -exec sh -c 'cd {} && minifly -i "*.gif,*.jpg,*.png,*.svg" -m "" -o .' \;
           cd public/assets/js
-          cat swup.min.js script.js > script.js
+          cat script.js >> swup.min.js
+          mv swup.min.js script.js
       - name: Deploy
         uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
         with:
