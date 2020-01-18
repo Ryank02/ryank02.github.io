@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
 
       - name: Minify CSS, HTML, and JS
         run: |
           yarn add minifly
           cd public
-          yarn run minifly -i "./assets/favicon.png,./assets/img" -m "" -o .
+          yarn run minifly -i "/assets/favicon.png,/assets/img" -m "" -o .
 
       - name: Deploy
         uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
