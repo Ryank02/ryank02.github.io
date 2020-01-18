@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: |
-          yarn add https://github.com/Ryank02/minifly
+          yarn global add https://github.com/Ryank02/minifly
           cd public
           minifly -i "/assets/favicon.png,/assets/img" -m "" -o .
       - uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
