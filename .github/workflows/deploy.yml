@@ -9,6 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: |
+          export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
           yarn global add https://github.com/Ryank02/minifly
           cd public
           minifly -i "/assets/favicon.png,/assets/img" -m "" -o .
