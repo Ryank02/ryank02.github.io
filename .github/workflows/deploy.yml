@@ -12,7 +12,7 @@ jobs:
       - run: |
           npm i -g Ryank02/minifly
           cd public
-          minifly -i "*.jpg,*.png,*.svg" -m "" -o .
+          minifly -i "/assets/favicon.png,/assets/img" -m "" -o .
       - uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
         with:
           deploy-branch: master
