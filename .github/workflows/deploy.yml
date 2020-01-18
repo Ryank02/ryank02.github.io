@@ -11,7 +11,7 @@ jobs:
       - name: Minify css, html, and js
         run: |
           export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
-          yarn global add https://github.com/Ryank02/minifly
+          yarn global add https://github.com/xxczaki/minifly
           cd public
           minifly -i "/assets/favicon.png,/assets/img" -m "" -o .
       - uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
