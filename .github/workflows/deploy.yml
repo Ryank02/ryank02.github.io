@@ -7,14 +7,17 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: Minify css, html, and js
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Minify CSS, HTML, and JS
         run: |
           yarn add https://github.com/xxczaki/minifly
           cd public
           yarn run minifly -i "/assets/favicon.png,/assets/img" -m "" -o .
-      - uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
+
+      - name: Deploy
+        uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
         with:
           deploy-branch: master
-          repo-token: ${{ secrets.GH_PAT }}
           site-directory: public
