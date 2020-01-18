@@ -12,7 +12,7 @@ jobs:
 
       - name: Minify CSS, HTML, and JS
         run: |
-          yarn add https://github.com/xxczaki/minifly
+          yarn add minifly
           cd public
           yarn run minifly -i "/assets/favicon.png,/assets/img" -m "" -o .
 
