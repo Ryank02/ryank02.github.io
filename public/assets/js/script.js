@@ -1,5 +1,5 @@
 // Init swup
-const swup = new Swup();
+const swup = new Swup({ containers: ["main"] });
 
 // Disable scrolling when overlay is open
 const elem = document.querySelectorAll("header > a, div.img-container");
