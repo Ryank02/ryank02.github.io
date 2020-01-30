@@ -185,10 +185,12 @@ div.img-popup img {
 }
 
 /* Form styling */
+form { margin-left: 1.5px; }
+
 form label {
     display: block;
     font-size: 1.2rem;
-    padding: 6px 1.5px;
+    margin: 6px 0 12px;
 }
 
 form input,
@@ -197,7 +199,7 @@ form textarea {
     border: none;
     border-radius: 6px;
     font-size: 1.5rem;
-    margin: 0 0 12px;
+    margin: 6px 0 6px -1.5px;
     padding: 6px 7.5px;
     -ms-user-select: text;
         user-select: text;
@@ -213,7 +215,7 @@ form textarea {
 form input[type="submit"] {
     -webkit-appearance: none;
     cursor: pointer;
-    margin: 3px 0 0;
+    margin: 0 0 0 -1.5px;
 }
 
 /* Dialog */
