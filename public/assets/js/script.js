@@ -33,10 +33,8 @@ function initPages() {
             // Contact page
             const dialog = document.getElementById("dialog");
             document.forms[0].onsubmit = function (e) {
-                if (Object.fromEntries) {
+                if (Array.from && [].reduce) {
                     e.preventDefault();
-                    const data = Object.fromEntries(new FormData(this));
-                    data._redirect = null;
                     const xhr = new XMLHttpRequest();
                     xhr.open(this.method, this.action);
                     xhr.onload = function () {
@@ -48,7 +46,17 @@ function initPages() {
                         setTimeout(function () { dialog.className = "" }, 3000);
                     }
                     xhr.setRequestHeader("Content-Type", "application/json");
-                    xhr.send(JSON.stringify(data));
+                    xhr.send(JSON.stringify(
+                        Array.from(new FormData(document.forms[0])).reduce(
+                            function (all, add) {
+                                if (all[0])
+                                    all = { [all[0]]: all[1] };
+                                if (add[0] !== "_redirect")
+                                    all[add[0]] = add[1];
+                                return all;
+                            }
+                        )
+                    ));
                 }
             }
             break;
