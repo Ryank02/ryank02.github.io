@@ -35,6 +35,8 @@ function initPages() {
             document.forms[0].onsubmit = function (e) {
                 if (Object.fromEntries) {
                     e.preventDefault();
+                    const data = Object.fromEntries(new FormData(this));
+                    data._redirect = null;
                     const xhr = new XMLHttpRequest();
                     xhr.open(this.method, this.action);
                     xhr.onload = function () {
@@ -46,7 +48,7 @@ function initPages() {
                         setTimeout(function () { dialog.className = "" }, 3000);
                     }
                     xhr.setRequestHeader("Content-Type", "application/json");
-                    xhr.send(JSON.stringify(Object.fromEntries(new FormData(this))));
+                    xhr.send(JSON.stringify(data));
                 }
             }
             break;
