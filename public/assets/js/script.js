@@ -34,33 +34,10 @@ function initPages() {
             break;
         case "/contact":
             // Contact page
-            const dialog = document.getElementById("dialog");
-            document.forms[0].onsubmit = function (e) {
-                if (Array.from && [].reduce) {
-                    e.preventDefault();
-                    const xhr = new XMLHttpRequest();
-                    xhr.open(this.method, this.action);
-                    xhr.onload = function () {
-                        dialog.children[0].innerHTML =
-                            xhr.status === 200
-                                ? "Het bericht is verzonden!"
-                                : "Er is iets misgegaan, probeer het later aub opnieuw.";
-                        dialog.className = "show";
-                        setTimeout(function () { dialog.className = "" }, 3000);
-                    }
-                    xhr.setRequestHeader("Content-Type", "application/json");
-                    xhr.send(JSON.stringify(
-                        Array.from(new FormData(document.forms[0])).reduce(
-                            function (all, add) {
-                                if (all[0])
-                                    all = { [all[0]]: all[1] };
-                                if (add[0] !== "_redirect")
-                                    all[add[0]] = add[1];
-                                return all;
-                            }
-                        )
-                    ));
-                }
+            function dialog() { document.getElementById("dialog").classList.toggle("show"); }
+            document.forms[0].onsubmit = function () {
+                dialog();
+                setTimeout(dialog, 3000);
             }
             break;
     }

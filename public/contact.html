@@ -29,7 +29,7 @@
     <main>
         <div class="contact">
             <h1>Contact</h1>
-            <form action="https://submit-form.com/rSgzrF7-a9UvUoEPPTZ5Z" method="POST">
+            <form action="https://submit-form.com/rSgzrF7-a9UvUoEPPTZ5Z" method="POST" target="frame">
                 <label>
                     Naam *
                     <input name="name" required>
@@ -53,11 +53,12 @@
                 <input type="submit" value="Versturen">
         
                 <input hidden name="_gotcha">
-                <input hidden name="_redirect" value="https://ryank02.github.io/contact">
             </form>
-                
+
+            <iframe hidden name="frame"></iframe>
+            
             <div id="dialog">
-                <div></div>
+                <div>Het bericht is verzonden!</div>
             </div>
         </div>
     </main>
