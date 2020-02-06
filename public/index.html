@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <link rel="icon" href="/assets/favicon.png">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="icon" href="./assets/favicon.png">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <meta charset="UTF-8">
     <meta name="description" content="De portfolio website van Ryan Kroon.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Ryan Kroon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ryan Kroon | Portfolio</title>
 </head>
 
 <body>
+    <a id="over-mij"></a>
+    <a id="projecten"></a>
+    <a id="contact"></a>
+
     <header>
         <a tabindex="-1">
             <div></div>
@@ -17,10 +21,10 @@
         <p>Ryan Kroon</p>
         <nav>
             <div>
-                <a href="/">Home</a>
-                <a href="/over-mij">Over Mij</a>
-                <a href="/projecten">Projecten</a>
-                <a href="/contact">Contact</a>
+                <a href="#">Home</a>
+                <a href="#over-mij">Over Mij</a>
+                <a href="#projecten">Projecten</a>
+                <a href="#contact">Contact</a>
             </div>
         </nav>
         <div class="swipe"></div>
@@ -31,9 +35,107 @@
             <h1>Ryan Kroon</h1>
             <p>Programmeur in opleiding</p>
         </div>
+
+        <div class="over-mij">
+            <div class="col">
+                <section>
+                    <h1>Wie ben ik?</h1>
+                    <p>
+                        Mijn naam is Ryan, en ik ben een <span id="age">17</span>-jarige student uit Arnhem.<br>
+                        In mijn vrije tijd hou ik mezelf bezig met programmeren en gamen.
+                    </p>
+                </section>
+                <section>
+                    <h1>Waarom doe ik wat ik doe?</h1>
+                    <p>
+                        Ik volg de opleiding Applicatie- en Mediaontwikkelaar omdat ik er veel interesse in heb en mezelf daar thuis voel.<br>
+                        Op de middelbare school begon ik al interesse te krijgen in HTML & CSS, en ging ik er al een beetje mee experimenteren.<br>
+                        Daarna merkte ik bij een workshop op het Astrum College dat ik programmeren erg interessant vond, en toen ben ik daar de opleiding gaan volgen.
+                    </p>
+                </section>
+            </div>
+            <div class="col">
+                <section>
+                    <h1>Mijn vaardigheden</h1>
+                    <p>C#</p>
+                    <div class="meter"><div>100%</div></div>
+                    <p>HTML & CSS</p>
+                    <div class="meter"><div>100%</div></div>
+                    <p>Javascript</p>
+                    <div class="meter"><div style="width: 80%">80%</div></div>
+                    <p>PHP</p>
+                    <div class="meter"><div style="width: 80%">80%</div></div>
+                </section>
+            </div>
+        </div>
+
+        <div class="projecten">
+            <div class="col">
+                <div class="img-container" tabindex="-1">
+                    <img src="/assets/img/Portfolio.png" alt="" draggable="false">
+                </div>
+                <div class="img-popup">
+                    <img src="/assets/img/Portfolio.png" alt="" draggable="false">
+                </div>
+                <h1>Mijn portfolio website</h1>
+                <p>
+                    Dit is de website waar u nu op zit, die ik zelf voor een schoolopdracht heb gemaakt.<br>
+                    Ik heb HTML, CSS en JS hiervoor gebruikt, maar ik heb expres veel functionaliteit JS onafhankelijk gemaakt.<br>
+                    Ook is deze website 100% compatibel met oudere browsers zoals Internet Explorer 11.
+                </p>
+            </div>
+            <div class="col">
+                <div class="img-container" tabindex="-1">
+                    <img src="/assets/img/Placeholder.jpg" alt="" draggable="false">
+                </div>
+                <div class="img-popup">
+                    <img src="/assets/img/Placeholder.jpg" alt="" draggable="false">
+                </div>
+                <h1>Placeholder</h1>
+                <p>
+                    Op dit moment weet ik niks wat ik hier neer zou kunnen zetten, dus hier is een placeholder.<br>
+                    Hier zal ooit misschien wel iets komen.<br>
+                    Tot die tijd, geniet van deze zelfgemaakte Forza Horizon 4 screenshot!
+                </p>
+            </div>
+        </div>
+
+        <div class="contact">
+            <h1>Contact</h1>
+            <form action="https://submit-form.com/rSgzrF7-a9UvUoEPPTZ5Z" method="POST" target="frame">
+                <label>
+                    Naam *
+                    <input name="name" required>
+                </label>
+        
+                <label>
+                    E-mailadres *
+                    <input name="email" type="email" required>
+                </label>
+        
+                <label>
+                    Onderwerp
+                    <input name="subject">
+                </label>
+        
+                <label>
+                    Bericht *
+                    <textarea name="message" rows="5" required></textarea>
+                </label>
+        
+                <input type="submit" value="Versturen">
+        
+                <input hidden name="_gotcha">
+            </form>
+
+            <iframe hidden name="frame"></iframe>
+            
+            <div id="dialog">
+                <div>Het bericht is verzonden!</div>
+            </div>
+        </div>
     </main>
 
-    <script src="/assets/js/swup.min.js"></script>
-    <script src="/assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>

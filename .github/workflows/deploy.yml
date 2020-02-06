@@ -1,8 +1,10 @@
 name: Deploy
+
 on:
   push:
     branches:
       - source
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -10,15 +12,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Minify CSS, HTML, and JS
+      - name: Inline and minify code
         run: |
           export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
-          yarn global add minifly
-          find public -type f -iname "*.html" -exec sed -i 's+<script src="/assets/js/swup.min.js"></script>+\ +g' {} \;
-          find public -type d -exec sh -c 'cd {} && minifly -i "*.gif,*.jpg,*.png,*.svg" -m "" -o .' \;
-          cd public/assets/js
-          cat script.js >> swup.min.js
-          mv swup.min.js script.js
+          yarn global add html-minifier-terser inliner
+          cd public
+          cat index.html | inliner -ni | html-minifier-terser --collapse-boolean-attributes --collapse-whitespace --remove-attribute-quotes --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace --minify-css true --minify-js true -o index.html
 
       - name: Deploy
         uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
