@@ -35,7 +35,6 @@ header {
     background: #006191;
     bottom: 0;
     font-weight: 600;
-    padding: 12px 6px;
     position: fixed;
     width: 100vw;
     z-index: 1;
@@ -44,6 +43,7 @@ header {
 header p {
     display: none;
     font-size: 1.8rem;
+    padding: 9px 24px;
 }
 
 header nav {
@@ -54,9 +54,18 @@ header nav {
 }
 
 header nav a {
+    display: inline-block;
     flex: 1 1 auto;
+    padding: 12px 0 9px;
     text-decoration: none;
 }
+
+:target ~ header nav a[href="#"] { border-bottom: none; }
+
+header nav a[href="#"],
+#over-mij:target ~ header nav a[href="#over-mij"],
+#projecten:target ~ header nav a[href="#projecten"],
+#contact:target ~ header nav a[href="#contact"] { border-bottom: solid #fff 3px; }
 
 /* Page content */
 main {
@@ -209,21 +218,17 @@ div.meter div {
 
 /* Responsive */
 @media screen and (min-width: 768px) {
-    header {
-        background: linear-gradient(#00689d 0%, transparent 75%);
-        padding: 9px 24px;
-        position: relative;
-    }
+    header { position: relative; }
     
     header p { display: inline-block; }
     
     header nav {
         float: right;
         font-size: 1.35rem;
-        margin: -1.5px -6px 0 0;
+        margin-right: 18px;
     }
 
-    header nav a { padding: 6px 15px; }
+    header nav a { padding: 12px 15px; }
 
     main {
         margin-bottom: 0;
