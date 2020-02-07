@@ -6,20 +6,29 @@ for (let i = elems.length; i--;) {
     elems[i].onfocus = scrollToggle;
 }
 
-// Fade animation when switching page
-const navLinks = document.querySelectorAll("nav a");
-const main = document.getElementsByTagName("main")[0];
-function switchPage(e) {
-    e.preventDefault();
-    if (e.target.href !== window.location.href) {
-        main.style.opacity = 0;
-        setTimeout(function() {
-            window.location = e.target.href;
-            main.style.cssText = "";
-        }, 300);
+// Hash navigation
+if (document.documentMode || navigator.userAgent.includes("Edge") && !navigator.vendor.includes("Google")) {
+    // Fix for hash navigation on IE and MS Edge (but exclude Chromium Edge)
+    window.onhashchange = function () {
+        document.body.style.display = "none";
+        document.body.style.display = "";
     }
+} else {
+    // Fade animation when switching page
+    const navLinks = document.querySelectorAll("nav a");
+    const main = document.getElementsByTagName("main")[0];
+    function switchPage(e) {
+        e.preventDefault();
+        if (e.target.href !== window.location.href) {
+            main.style.opacity = 0;
+            setTimeout(function () {
+                window.location = e.target.href;
+                main.style.cssText = "";
+            }, 300);
+        }
+    }
+    for (let i = navLinks.length; i--;) { navLinks[i].onclick = switchPage; }
 }
-for (let i = navLinks.length; i--;) { navLinks[i].onclick = switchPage; }
 
 // About page
 const date = new Date("8/19/2002") - new Date();
