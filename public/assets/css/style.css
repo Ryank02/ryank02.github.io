@@ -102,21 +102,6 @@ header nav div a {
     text-decoration: none;
 }
 
-/* Swipe area for mobile nav */
-header div.swipe {
-    bottom: 0;
-    position: fixed;
-    right: 0;
-    top: 52.67px;
-    width: 36px;
-}
-
-header > a:focus ~ div.swipe {
-    left: 0;
-    right: auto;
-    width: 25%;
-}
-
 /* Page content */
 main {
     align-items: center;
@@ -271,8 +256,7 @@ div.meter div {
 
 /* Responsive */
 @media screen and (min-width: 768px) {
-    header > a,
-    header div.swipe { display: none; }
+    header > a { display: none; }
 
     header nav {
         background: none;
