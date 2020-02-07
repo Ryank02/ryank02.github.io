@@ -1,5 +1,5 @@
 // Disable scrolling when overlay is open
-const elems = document.querySelectorAll("header > a, div.img-container");
+const elems = document.getElementsByClassName("img-container");
 function scrollToggle(e) { document.body.style.overflow = e.type === "blur" ? "" : "hidden"; }
 for (let i = elems.length; i--;) {
     elems[i].onblur = scrollToggle;
@@ -10,8 +10,8 @@ for (let i = elems.length; i--;) {
 const navLinks = document.querySelectorAll("nav a");
 const main = document.getElementsByTagName("main")[0];
 function switchPage(e) {
+    e.preventDefault();
     if (e.target.href !== window.location.href) {
-        e.preventDefault();
         main.style.opacity = 0;
         setTimeout(function() {
             window.location = e.target.href;
