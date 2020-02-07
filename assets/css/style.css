@@ -43,7 +43,7 @@ header {
 header p {
     display: none;
     font-size: 1.8rem;
-    padding: 9px 24px;
+    padding: 9px 24px 0;
 }
 
 header nav {
