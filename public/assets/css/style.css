@@ -56,16 +56,35 @@ header nav {
 header nav a {
     display: inline-block;
     flex: 1 1 auto;
-    padding: 12px 0 9px;
+    padding: 12px 0;
+    position: relative;
     text-decoration: none;
 }
 
-:target ~ header nav a[href="#"] { border-bottom: none; }
+header nav a::after {
+    background: #fff;
+    bottom: 0;
+    content: "";
+    height: 3px;
+    left: 100%;
+    position: absolute;
+    right: 100%;
+}
 
-header nav a[href="#"],
-#over-mij:target ~ header nav a[href="#over-mij"],
-#projecten:target ~ header nav a[href="#projecten"],
-#contact:target ~ header nav a[href="#contact"] { border-bottom: solid #fff 3px; }
+:target ~ header nav a[href="#"]::after {
+    left: 100%;
+    right: 100%;
+    transition: none;
+}
+
+header nav a[href="#"]::after,
+#over-mij:target ~ header nav a[href="#over-mij"]::after,
+#projecten:target ~ header nav a[href="#projecten"]::after,
+#contact:target ~ header nav a[href="#contact"]::after {
+    left: 0;
+    right: 0;
+    transition: left .3s, right .3s;
+}
 
 /* Page content */
 main {
@@ -228,7 +247,7 @@ div.meter div {
         margin-right: 18px;
     }
 
-    header nav a { padding: 12px 15px; }
+    header nav a { padding: 12px 15px 15px; }
 
     main {
         margin-bottom: 0;
