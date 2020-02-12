@@ -13,9 +13,6 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    overflow: overlay;
-    overflow-x: hidden;
     touch-action: manipulation;
     -ms-user-select: none;
         user-select: none;
@@ -37,7 +34,6 @@ header {
     font-weight: 600;
     position: fixed;
     width: 100vw;
-    z-index: 1;
 }
 
 header p {
@@ -74,17 +70,22 @@ header nav a[href="#"],
     transition: border-bottom-color .3s;
 }
 
-/* Page content */
+/* Page layout */
 main {
-    align-items: center;
     display: flex;
-    flex: 1 0 auto;
-    justify-content: center;
-    margin-bottom: 47.4px;
-    padding: 24px 36px;
+    height: calc(100% - 47.4px);
+    overflow: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    overflow: overlay;
     transition: opacity .3s;
 }
 
+main > div {
+    margin: auto;
+    padding: 24px 36px;
+}
+
+/* Page content */
 main div h1 {
     font-size: 2.1rem;
     font-weight: 600;
@@ -237,10 +238,8 @@ div.meter div {
 
     header nav a { padding: 12px 15px; }
 
-    main {
-        margin-bottom: 0;
-        padding: 48px 72px;
-    }
+    main { height: 100%; }
+    main > div { padding: 48px 72px; }
 
     div.home h1,
     div.home p { text-align: center; }
