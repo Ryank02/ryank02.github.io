@@ -1,3 +1,6 @@
+// Put main element in a variable
+const main = document.getElementsByTagName("main")[0];
+
 // Disable scrolling when overlay is open
 const elems = document.getElementsByClassName("img-container");
 function scrollToggle(e) { document.body.style.overflow = e.type === "blur" ? "" : "hidden"; }
@@ -13,15 +16,13 @@ if (document.documentMode || navigator.userAgent.includes("Edge") && !navigator.
         if (!linkClicked) {
             document.body.style.display = "none";
             document.body.style.display = "";
-        } else {
-            linkClicked = false;
         }
+        linkClicked = false;
     }
 }
 
 // Fade animation when switching page
 const navLinks = document.querySelectorAll("nav a");
-const main = document.getElementsByTagName("main")[0];
 function switchPage(e) {
     e.preventDefault();
     if (e.target.href !== window.location.href) {
@@ -30,13 +31,14 @@ function switchPage(e) {
         setTimeout(function () {
             window.location = e.target.href;
             main.style.cssText = "";
+            main.scrollTo(0, 0);
         }, 300);
     }
 }
 for (let i = navLinks.length; i--;) { navLinks[i].onclick = switchPage; }
 
 // About page
-const date = new Date("8/19/2002") - new Date();
+const date = new Date(2002, 8, 19) - new Date();
 document.getElementById("age").innerHTML = ~~(-date / 31536e6);
 
 // Contact page
