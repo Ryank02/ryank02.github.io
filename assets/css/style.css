@@ -54,35 +54,24 @@ header nav {
 }
 
 header nav a {
+    border-bottom: 3px solid transparent;
     display: inline-block;
     flex: 1 1 auto;
-    padding: 12px 0;
-    position: relative;
+    padding: 12px 0 9px;
     text-decoration: none;
 }
 
-header nav a::after {
-    background: #fff;
-    bottom: 0;
-    content: "";
-    height: 3px;
-    position: absolute;
-}
-
-header nav a::after,
-:target ~ header nav a[href="#"]::after {
-    left: 50%;
-    right: 50%;
+:target ~ header nav a[href="#"] {
+    border-bottom-color: transparent;
     transition: none;
 }
 
-header nav a[href="#"]::after,
-#over-mij:target ~ header nav a[href="#over-mij"]::after,
-#projecten:target ~ header nav a[href="#projecten"]::after,
-#contact:target ~ header nav a[href="#contact"]::after {
-    left: 0;
-    right: 0;
-    transition: left .3s, right .3s;
+header nav a[href="#"],
+#over-mij:target ~ header nav a[href="#over-mij"],
+#projecten:target ~ header nav a[href="#projecten"],
+#contact:target ~ header nav a[href="#contact"] {
+    border-bottom-color: #fff;
+    transition: border-bottom-color .3s;
 }
 
 /* Page content */
@@ -246,7 +235,7 @@ div.meter div {
         margin-right: 18px;
     }
 
-    header nav a { padding: 12px 15px 15px; }
+    header nav a { padding: 12px 15px; }
 
     main {
         margin-bottom: 0;
