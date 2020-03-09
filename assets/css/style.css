@@ -1,15 +1,15 @@
 * {
     box-sizing: border-box;
     color: #fff;
-    font-family: 'CircularStd', sans-serif;
+    font-family: "CircularStd", sans-serif;
     margin: 0;
     outline: none;
     -webkit-tap-highlight-color: transparent;
 }
-::selection { background: #c1c1c1 }
+::selection { background: #ccc; }
 
 body {
-    background: #0080c0;
+    background: #48b;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -17,7 +17,7 @@ body {
     touch-action: manipulation;
     -ms-user-select: none;
         user-select: none;
-    width: 100%
+    width: 100%;
 }
 
 /* Page switching */
@@ -31,7 +31,7 @@ main > div.home,
 
 /* Header */
 header {
-    background: #006191;
+    background: linear-gradient(transparent, rgba(0,0,0,.12));
     bottom: 0;
     font-weight: 600;
     position: fixed;
@@ -49,7 +49,7 @@ header nav {
     display: flex;
     font-size: 1.2rem;
     text-align: center;
-    text-shadow: 0 0 12px #0070a8;
+    text-shadow: 0 0 12px #268;
 }
 
 header nav a {
@@ -117,7 +117,7 @@ div.col section:last-child { padding-bottom: 6px; }
 
 /* Popup images */
 div.img-container {
-    background: #006191;
+    background: #268;
     border-radius: 6px;
     cursor: pointer;
     height: 0;
@@ -168,7 +168,7 @@ form label {
 
 form input,
 form textarea {
-    background: #006191;
+    background: #268;
     border: none;
     border-radius: 6px;
     font-size: 1.5rem;
@@ -204,7 +204,7 @@ div#dialog:hover,
 div#dialog.show { transform: translateX(0%); }
 
 div#dialog div {
-    background: #004263;
+    background: #268;
     border-radius: 3px;
     margin: 18px;
     max-width: calc(100vw - 36px);
@@ -215,7 +215,7 @@ div#dialog div {
 
 /* Progress bars */
 div.meter {
-    background: #0070a8;
+    background: #37a;
     border-radius: 6px;
     margin: 4.5px 0 12px;
     overflow: hidden;
@@ -223,16 +223,19 @@ div.meter {
 }
 
 div.meter div {
-    background: #00517a;
+    background: #268;
     padding: 4.5px 9px;
 }
 
 /* Responsive */
 @media screen and (min-width: 768px) {
-    header { position: relative; }
-    
+    header {
+        background: linear-gradient(rgba(0,0,0,.18), transparent);
+        position: relative;
+    }
+
     header p { display: inline-block; }
-    
+
     header nav {
         float: right;
         font-size: 1.35rem;
@@ -264,19 +267,19 @@ div.meter div {
 
 /* Fonts */  
 @font-face {
-    font-family: 'CircularStd';
+    font-family: "CircularStd";
     font-style: normal;
     font-weight: 600;
     font-display: swap;
-    src: url('/assets/fonts/CircularStd-Bold.woff2') format('woff2'),
-         url('/assets/fonts/CircularStd-Bold.woff') format('woff');
+    src: url("/assets/fonts/CircularStd-Bold.woff2") format("woff2"),
+         url("/assets/fonts/CircularStd-Bold.woff") format("woff");
 }
 
 @font-face {
-    font-family: 'CircularStd';
+    font-family: "CircularStd";
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('/assets/fonts/CircularStd-Book.woff2') format('woff2'),
-         url('/assets/fonts/CircularStd-Book.woff') format('woff');
+    src: url("/assets/fonts/CircularStd-Book.woff2") format("woff2"),
+         url("/assets/fonts/CircularStd-Book.woff") format("woff");
 }
