@@ -3,7 +3,7 @@ const main = document.getElementsByTagName("main")[0];
 
 // Disable scrolling when overlay is open
 const elems = document.getElementsByClassName("img-container");
-function scrollToggle(e) { document.body.style.overflow = e.type === "blur" ? "" : "hidden"; }
+function scrollToggle(e) { main.style.overflow = e.type === "blur" ? "" : "hidden"; }
 for (let i = elems.length; i--;) {
     elems[i].onblur = scrollToggle;
     elems[i].onfocus = scrollToggle;
@@ -14,8 +14,8 @@ let linkClicked = false;
 if (document.documentMode || navigator.userAgent.includes("Edge") && !navigator.vendor.includes("Google")) {
     window.onhashchange = function () {
         if (!linkClicked) {
-            document.body.style.display = "none";
-            document.body.style.display = "";
+            main.style.display = "none";
+            main.style.display = "";
         }
         linkClicked = false;
     }
@@ -30,7 +30,7 @@ function switchPage(e) {
         main.style.opacity = 0;
         setTimeout(function () {
             window.location = e.target.href;
-            main.style.cssText = "";
+            main.style.opacity = "";
             main.scrollTo(0, 0);
         }, 300);
     }
