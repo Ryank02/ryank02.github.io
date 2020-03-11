@@ -1,7 +1,6 @@
 * {
     box-sizing: border-box;
     color: #fff;
-    font-family: "CircularStd", sans-serif;
     margin: 0;
     outline: none;
     -webkit-tap-highlight-color: transparent;
@@ -33,7 +32,8 @@ main > div.home,
 header {
     background: linear-gradient(#48b, #3c77a4);
     bottom: 0;
-    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
     position: fixed;
     width: 100vw;
     z-index: 1;
@@ -75,6 +75,7 @@ header nav a[href="#"],
 /* Page layout */
 main {
     display: flex;
+    font-family: "CircularStd", sans-serif;
     height: calc(100% - 47.4px);
     overflow: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
@@ -89,8 +90,9 @@ main > div {
 
 /* Page content */
 main div h1 {
+    font-family: "Roboto";
     font-size: 2.1rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 main div p {
@@ -170,6 +172,7 @@ form textarea {
     background: #316286;
     border: none;
     border-radius: 6px;
+    font-family: inherit;
     font-size: 1.5rem;
     margin: 6px 0 0 -1.5px;
     padding: 6px 7.5px;
@@ -268,17 +271,17 @@ div.meter div {
 @font-face {
     font-family: "CircularStd";
     font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url("/assets/fonts/CircularStd-Bold.woff2") format("woff2"),
-         url("/assets/fonts/CircularStd-Bold.woff") format("woff");
-}
-
-@font-face {
-    font-family: "CircularStd";
-    font-style: normal;
     font-weight: 400;
     font-display: swap;
     src: url("/assets/fonts/CircularStd-Book.woff2") format("woff2"),
          url("/assets/fonts/CircularStd-Book.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/assets/fonts/Roboto-Bold.woff2") format("woff2"),
+         url("/assets/fonts/Roboto-Bold.woff") format("woff");
 }
