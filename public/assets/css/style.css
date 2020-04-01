@@ -76,7 +76,7 @@ header nav a[href="#"],
 main {
     display: flex;
     font-family: "CircularStd", sans-serif;
-    height: calc(100% - 47.4px);
+    height: calc(100% - 46.7px);
     overflow: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     overflow: overlay;
