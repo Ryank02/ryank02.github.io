@@ -15,14 +15,9 @@ jobs:
       - name: Minify
         run: |
           export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
-          yarn global add minify
+          yarn global add minifly
           cd public
-          minify index.html > index.html
-          minify over-mij/index.html > over-mij/index.html
-          minify projecten/index.html > projecten/index.html
-          minify contact/index.html > contact/index.html
-          minify assets/css/style.css > assets/css/style.css
-          minify assets/js/script.js > assets/js/script.js
+          minifly -m "" -o ""
 
       - name: Deploy
         uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
