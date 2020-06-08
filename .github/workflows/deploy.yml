@@ -16,8 +16,7 @@ jobs:
         run: |
           export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
           yarn global add minifly
-          cd public
-          minifly -m '' -o ''
+          find public -type d -exec sh -c 'cd {} && minifly -i "*.gif,*.jpg,*.png,*.svg" -m "" -o .' \;
 
       - name: Deploy
         uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
