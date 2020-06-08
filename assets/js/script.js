@@ -1,4 +1,1 @@
-const swup = new Swup({
-    animationSelector: "main",
-    containers: ["main"]
-});
+const swup=new Swup({animationSelector:"main",containers:["main"]});
