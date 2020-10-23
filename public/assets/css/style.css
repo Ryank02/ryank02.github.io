@@ -151,6 +151,8 @@ form div label {
 }
 
 form div label * {
+    border-radius: 3px;
+    border: 1px solid #222;
     font-family: inherit;
     font-size: inherit;
     margin: 6px 0 0;
@@ -160,9 +162,12 @@ form div label * {
 }
 
 form div > input {
+    border-radius: 3px;
+    border: 1px solid #222;
     font-family: inherit;
     font-size: 1.3rem;
     margin-top: 12px;
+    padding: 3px 9px;
 }
 
 /* Tablet */
