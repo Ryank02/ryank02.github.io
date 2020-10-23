@@ -6,6 +6,9 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     touch-action: manipulation;
     -ms-user-select: none;
         user-select: none;
@@ -91,13 +94,13 @@ header nav a {
 main {
     font-family: "CircularStd", sans-serif;
     font-size: 0;
-    margin: 24px 10%;
+    margin: auto 0;
+    padding: 24px 10%;
     opacity: 1;
     overflow: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     overflow: overlay;
     transition: opacity .3s;
-    width: 80%;
 }
 
 html.is-animating main {
