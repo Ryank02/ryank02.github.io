@@ -130,7 +130,12 @@ main p {
 div > img {
     border-radius: 6px;
     margin-bottom: 6px;
+    margin-top: 24px;
     width: 100%;
+}
+
+div:first-child > img {
+    margin-top: 0;
 }
 
 /* Contact form */
@@ -160,6 +165,7 @@ form div > input {
 
 /* Tablet */
 @media screen and (min-width: 768px) {
+    /* Header */
     header {
         text-align: center;
     }
@@ -183,6 +189,7 @@ form div > input {
 
 /* Desktop */
 @media screen and (min-width: 1200px) {
+    /* Columns */
     div.col {
         padding: 0 24px;
         width: 50%;
@@ -194,6 +201,11 @@ form div > input {
 
     div.col:last-child {
         padding-right: 0;
+    }
+
+    /* Project page */
+    div > img {
+        margin-top: 0;
     }
 }
 
