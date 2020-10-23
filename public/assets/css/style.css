@@ -154,6 +154,7 @@ form div label * {
     font-family: inherit;
     font-size: inherit;
     margin: 6px 0 0;
+    padding: 3px 6px;
     width: 100%;
 }
 
