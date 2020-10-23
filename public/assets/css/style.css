@@ -126,6 +126,15 @@ main p {
     margin: 6px 0;
 }
 
+/* About me page */
+div > section {
+    margin-top: 24px;
+}
+
+div:first-child > section:first-child {
+    margin-top: 0;
+}
+
 /* Project page */
 div > img {
     border-radius: 6px;
@@ -208,6 +217,11 @@ form div > input {
 
     div.col:last-child {
         padding-right: 0;
+    }
+
+    /* About me page */
+    div > section:first-child {
+        margin-top: 0;
     }
 
     /* Project page */
