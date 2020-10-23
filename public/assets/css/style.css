@@ -107,6 +107,13 @@ html.is-animating main {
     opacity: 0;
 }
 
+/* Columns */
+div.col {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+
 /* Text styling */
 main h1 {
     font-family: "Roboto";
@@ -119,10 +126,10 @@ main p {
     margin: 6px 0;
 }
 
-/* Columns */
-div.col {
-    display: inline-block;
-    vertical-align: top;
+/* Project page */
+div > img {
+    border-radius: 6px;
+    margin-bottom: 6px;
     width: 100%;
 }
 
