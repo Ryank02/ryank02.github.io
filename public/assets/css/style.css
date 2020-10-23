@@ -135,6 +135,19 @@ div:first-child > section:first-child {
     margin-top: 0;
 }
 
+div.meter {
+    background: #444;
+    border-radius: 6px;
+    margin: 4.5px 0 12px;
+    overflow: hidden;
+    text-align: right;
+}
+
+div.meter div {
+    background: #000;
+    padding: 7.5px 9px;
+}
+
 /* Project page */
 div > img {
     border-radius: 6px;
