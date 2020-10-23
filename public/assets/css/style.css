@@ -90,11 +90,14 @@ header nav a {
 /* Main styling */
 main {
     font-family: "CircularStd", sans-serif;
+    font-size: 0;
+    margin: 24px 10%;
     opacity: 1;
     overflow: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     overflow: overlay;
     transition: opacity .3s;
+    width: 80%;
 }
 
 html.is-animating main {
@@ -109,8 +112,40 @@ main h1 {
 }
 
 main p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin: 6px 0;
+}
+
+/* Columns */
+div.col {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+
+/* Contact form */
+form div {
+    text-align: right;
+}
+
+form div label {
+    display: block;
+    font-size: 1.3rem;
+    margin: 18px 0 0;
+    text-align: left;
+}
+
+form div label * {
+    font-family: inherit;
+    font-size: inherit;
+    margin: 6px 0 0;
+    width: 100%;
+}
+
+form div > input {
+    font-family: inherit;
+    font-size: 1.3rem;
+    margin-top: 12px;
 }
 
 /* Tablet */
@@ -138,6 +173,18 @@ main p {
 
 /* Desktop */
 @media screen and (min-width: 1200px) {
+    div.col {
+        padding: 0 24px;
+        width: 50%;
+    }
+
+    div.col:first-child {
+        padding-left: 0;
+    }
+
+    div.col:last-child {
+        padding-right: 0;
+    }
 }
 
 /* Fonts */  
