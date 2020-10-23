@@ -126,6 +126,20 @@ main p {
     margin: 6px 0;
 }
 
+/* Home page */
+div.home {
+    text-align: center;
+}
+
+div.home h1 {
+    font-size: 4.8rem;
+    line-height: 1.05;
+}
+
+div.home p {
+    font-size: 2.1rem;
+}
+
 /* About me page */
 div > section {
     margin-top: 24px;
