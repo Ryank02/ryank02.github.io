@@ -151,8 +151,7 @@ div.meter div {
 /* Project page */
 div > img {
     border-radius: 6px;
-    margin-bottom: 6px;
-    margin-top: 24px;
+    margin: 24px 0 6px;
     width: 100%;
 }
 
@@ -168,7 +167,7 @@ form div {
 form div label {
     display: block;
     font-size: 1.3rem;
-    margin: 18px 0 0;
+    margin-top: 18px;
     text-align: left;
 }
 
@@ -177,7 +176,7 @@ form div label * {
     border: 1px solid #222;
     font-family: inherit;
     font-size: inherit;
-    margin: 6px 0 0;
+    margin-top: 6px;
     padding: 3px 6px;
     resize: none;
     width: 100%;
@@ -220,7 +219,7 @@ form div > input {
 @media screen and (min-width: 1200px) {
     /* Columns */
     div.col {
-        padding: 0 24px;
+        padding: 0 36px;
         width: 50%;
     }
 
@@ -240,6 +239,11 @@ form div > input {
     /* Project page */
     div > img {
         margin-top: 0;
+    }
+
+    /* Contact form */
+    form div label * {
+        margin-top: 9px;
     }
 }
 
