@@ -159,6 +159,7 @@ div.meter div {
 
 /* Project page */
 div > picture img {
+    aspect-ratio: 16/9;
     border-radius: 5px;
     margin: 30px 0 10px;
     width: 100%;
