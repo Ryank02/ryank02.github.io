@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <link rel="icon" href="/assets/favicon.png">
+    <link rel="icon" href="/assets/favicon.svg">
     <link rel="stylesheet" href="/assets/css/style.css">
     <meta charset="UTF-8">
     <meta name="description" content="De portfolio website van Ryan Kroon.">
@@ -11,50 +11,60 @@
 
 <body>
     <header>
-        <p>Ryan Kroon</p>
-        <div tabindex="-1">
-            <div></div>
+        <div class="container">
+            <p>Ryan Kroon</p>
+            <div tabindex="-1">
+                <div></div>
+            </div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/over-mij/">Over Mij</a>
+                <a href="/projecten/">Projecten</a>
+                <a href="/contact/">Contact</a>
+            </nav>
         </div>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/over-mij/">Over Mij</a>
-            <a href="/projecten/">Projecten</a>
-            <a href="/contact/">Contact</a>
-        </nav>
     </header>
 
     <main>
-        <div class="col">
-            <section>
-                <h1>Wie ben ik?</h1>
-                <p>
-                    Ik ben Ryan, een <span id="age">18</span>-jarige student uit Arnhem.<br>
-                    In mijn vrije tijd hou ik mezelf bezig met programmeren en gamen.
-                </p>
-            </section>
-            <section>
-                <h1>Waarom doe ik wat ik doe?</h1>
-                <p>
-                    Ik volg de opleiding Applicatie- en Mediaontwikkelaar omdat ik er veel interesse in heb en mezelf daar thuis voel.<br>
-                    Op de middelbare school begon ik al interesse te krijgen in HTML & CSS, en ging ik er al een beetje mee experimenteren.<br>
-                    Daarna merkte ik bij een workshop op het Astrum College dat ik programmeren erg interessant vond, en toen ben ik daar de opleiding gaan volgen.
-                </p>
-            </section>
-        </div>
-        <div class="col">
-            <section>
-                <h1>Mijn vaardigheden</h1>
-                <p>C#</p>
-                <div class="meter"><div>100%</div></div>
-                <p>HTML & CSS</p>
-                <div class="meter"><div>100%</div></div>
-                <p>Javascript</p>
-                <div class="meter"><div>100%</div></div>
-                <p>PHP</p>
-                <div class="meter"><div style="width: 80%">80%</div></div>
-                <p>SQL</p>
-                <div class="meter"><div style="width: 60%">60%</div></div>
-            </section>
+        <div class="container">
+            <div class="col">
+                <section>
+                    <h1>Wie ben ik?</h1>
+                    <p>
+                        Ik ben Ryan, een <span id="age">18</span>-jarige student uit Arnhem.<br>
+                        In mijn vrije tijd hou ik mezelf bezig met programmeren en gamen.
+                    </p>
+                </section>
+                <section>
+                    <h1>Waarom doe ik wat ik doe?</h1>
+                    <p>
+                        Ik volg de opleiding Applicatie- en Mediaontwikkelaar omdat ik er veel interesse in heb en mezelf daar thuis voel.<br>
+                        Op de middelbare school begon ik al interesse te krijgen in HTML & CSS, en ging ik er al een beetje mee experimenteren.<br>
+                        Daarna merkte ik bij een workshop op het Astrum College dat ik programmeren erg interessant vond, en toen ben ik daar de opleiding gaan volgen.
+                    </p>
+                </section>
+            </div>
+            <div class="col">
+                <section>
+                    <h1>Mijn vaardigheden</h1>
+                    <div class="col">
+                        <p>C#</p>
+                        <div class="meter"><div>100%</div></div>
+                        <p>HTML & CSS</p>
+                        <div class="meter"><div>100%</div></div>
+                        <p>Javascript</p>
+                        <div class="meter"><div>100%</div></div>
+                    </div>
+                    <div class="col">
+                        <p>PHP</p>
+                        <div class="meter"><div style="width: 80%">80%</div></div>
+                        <p>SQL</p>
+                        <div class="meter"><div style="width: 60%">60%</div></div>
+                        <p>Wordpress</p>
+                        <div class="meter"><div style="width: 80%">80%</div></div>
+                    </div>
+                </section>
+            </div>
         </div>
     </main>
 
