@@ -12,8 +12,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     touch-action: manipulation;
-    -ms-user-select: none;
-        user-select: none;
+    user-select: none;
 }
 
 /* Layout */
@@ -159,13 +158,13 @@ div.meter div {
 }
 
 /* Project page */
-div > img {
+div > picture img {
     border-radius: 5px;
     margin: 30px 0 10px;
     width: 100%;
 }
 
-div:first-child > img {
+div:first-child > picture img {
     margin-top: 0;
 }
 
@@ -261,7 +260,7 @@ form div > input {
     }
 
     /* Project page */
-    div > img {
+    div > picture img {
         margin-top: 0;
     }
 }
