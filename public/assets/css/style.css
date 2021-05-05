@@ -264,6 +264,11 @@ form div > input {
     div > picture img {
         margin-top: 0;
     }
+
+    /* Contact form */
+    form div label:last-of-type * {
+        margin-bottom: 0;
+    }
 }
 
 /* Fonts */  
