@@ -231,6 +231,20 @@ form div > input {
     div.home p {
         font-size: 5rem;
     }
+
+    /* About me page */
+    div.col div.col {
+        padding: 0 20px;
+        width: 50%;
+    }
+
+    div.col div.col:first-of-type {
+        padding-left: 0;
+    }
+
+    div.col div.col:last-of-type {
+        padding-right: 0;
+    }
 }
 
 /* Desktop */
@@ -241,17 +255,11 @@ form div > input {
         width: 50%;
     }
 
-    div.col div.col {
-        padding: 0 20px;
-    }
-
-    div.col:first-of-type,
-    div.col div.col:first-of-type {
+    div.col:first-of-type {
         padding-left: 0;
     }
 
-    div.col:last-of-type,
-    div.col div.col:last-of-type {
+    div.col:last-of-type {
         padding-right: 0;
     }
 
