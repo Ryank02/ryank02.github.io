@@ -123,6 +123,15 @@ main p {
     margin: 5px 0;
 }
 
+main a {
+    color: #77f;
+    transition: opacity .3s .3s;
+}
+
+main a:hover {
+    color: #99f;
+}
+
 /* Home page */
 div.home h1 {
     font-size: 5rem;
