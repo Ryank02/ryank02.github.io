@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          path: public
 
       - name: Minify
         run: |
@@ -35,8 +33,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          # Upload entire repository
-          path: '.'
+          path: 'public'
 
       - name: Deploy
         uses: actions/deploy-pages@v2
