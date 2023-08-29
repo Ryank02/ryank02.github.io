@@ -3,7 +3,7 @@ name: Deploy to pages
 on:
   push:
     branches:
-      - source
+      - main
 
 permissions:
   contents: read
