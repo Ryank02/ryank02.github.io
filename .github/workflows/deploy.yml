@@ -18,6 +18,12 @@ jobs:
           yarn global add minifly
           find public -type d -exec sh -c 'cd {} && minifly -i "*.gif,*.jpg,*.png,*.svg" -m "" -o .' \;
 
+      - name: Discord validation
+        run: |
+          mkdir .well-known
+          cd .well-known
+          dh=f770b8997c7635ec886d978946f40e75e1600a96 > discord
+
       - name: Deploy
         uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
         with:
