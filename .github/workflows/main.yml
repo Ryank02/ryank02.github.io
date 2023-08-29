@@ -1,9 +1,14 @@
-name: Deploy
+name: Deploy to pages
 
 on:
   push:
     branches:
       - source
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build-deploy:
@@ -25,7 +30,11 @@ jobs:
           cd .well-known
           echo -n "dh=f770b8997c7635ec886d978946f40e75e1600a96" | cat > discord
 
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          # Upload entire repository
+          path: '.'
+
       - name: Deploy
         uses: actions/deploy-pages@v2
-        with:
-          token: ${{ github.token }}
