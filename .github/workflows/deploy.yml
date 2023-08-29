@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Minify
         run: |
@@ -26,8 +26,6 @@ jobs:
           echo -n "dh=f770b8997c7635ec886d978946f40e75e1600a96" | cat > discord
 
       - name: Deploy
-        uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
+        uses: actions/deploy-pages@v2
         with:
-          deploy-branch: master
-          repo-token: ${{ secrets.GH_PAT }}
-          site-directory: public
+          token: ${{ secrets.GH_PAT }}
