@@ -23,7 +23,7 @@ jobs:
           cd public
           mkdir .well-known
           cd .well-known
-          dh=f770b8997c7635ec886d978946f40e75e1600a96 > discord
+          echo -n "dh=f770b8997c7635ec886d978946f40e75e1600a96" | cat > discord
 
       - name: Deploy
         uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
