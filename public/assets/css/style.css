@@ -178,38 +178,6 @@ div:first-child > picture img {
     margin-top: 0;
 }
 
-/* Contact form */
-form div label {
-    display: block;
-    font-size: 1.3rem;
-    margin-top: 5px;
-}
-
-form div label * {
-    background: #444;
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    font-family: inherit;
-    font-size: inherit;
-    margin: 5px 0 15px;
-    padding: 10px 15px;
-    resize: none;
-    width: 100%;
-}
-
-form div > input {
-    background: #444;
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    float: right;
-    font-family: inherit;
-    font-size: 1.3rem;
-    margin-top: 15px;
-    padding: 10px 20px;
-}
-
 /* Tablet */
 @media screen and (min-width: 768px) {
     /* Header */
@@ -280,11 +248,6 @@ form div > input {
     /* Project page */
     div > picture img {
         margin-top: 0;
-    }
-
-    /* Contact form */
-    form div label:last-of-type * {
-        margin-bottom: 0;
     }
 }
 
